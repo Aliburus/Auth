@@ -8,8 +8,6 @@ import {
 import AuthContainer from "./components/auth/AuthContainer";
 import { AuthProvider } from "./context/AuthContext";
 import ForgotPassword from "./components/auth/ForgotPassword";
-import LoginForm from "./components/auth/LoginForm";
-import RegisterForm from "./components/auth/RegisterForm";
 import ResetPassword from "./components/auth/ResetPassword";
 
 function App() {
@@ -17,8 +15,8 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/login" element={<AuthContainer />} />
+          <Route path="/register" element={<AuthContainer />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/" element={<Navigate to="/login" replace />} />
